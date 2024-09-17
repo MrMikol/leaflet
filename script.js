@@ -6,6 +6,7 @@ var marker = L.marker([10.244536, -61.455111]).addTo(map);
     //fillOpacity: 0.3,
     //radius: 3000
 //}).addTo(map);
+
 var popup = L.popup()
     .setLatLng([10.26, -61.45])
     .setContent("I am a standalone popup.")
