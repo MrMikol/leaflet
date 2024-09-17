@@ -1,4 +1,4 @@
-var map = L.map('map').setView([10.244536, -61.455111], 13);
+var map = L.map('map').fitWorld();//setView([10.244536, -61.455111], 13);
 var marker = L.marker([10.244536, -61.455111]).addTo(map);
 //var circle = L.circle([10.26, -61.45], {
     //color: 'white',
@@ -11,6 +11,27 @@ var popup = L.popup()
     .setLatLng([10.26, -61.45])
     .setContent("I am a standalone popup.")
     .openOn(map);
+
+map.locate({setView: true, maxZoom:16});
+
+//On Location Found
+//function onLocationFound(e) {
+    //var radius = e.accuracy;
+
+    //L.marker(e.latlng).addTo(map)
+        //.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+    //L.circle(e.latlng, radius).addTo(map);
+//}
+
+//map.on('locationfound', onLocationFound);
+
+//On location Error
+//function onLocationError(e) {
+    //alert(e.message);
+//}
+
+//map.on('locationerror', onLocationError);
 
 function onMapClick(e) {
     popup
