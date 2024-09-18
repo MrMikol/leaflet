@@ -10,6 +10,20 @@
 <body>
     <div id="map"></div>
 
+    <!-- Form Modal for adding pin details -->
+    <p>HELLO WORLD</p>
+    <div id="PinModal" style="display:none;">
+        <p>HELLO AGAIN</p>
+        <h2>Add Pin Information</h2>
+        <form id="pinForm">
+            <label for="pinName">Name:</label><br>
+            <input type="text" id="pinName" name="pinName" required><br>
+            <label for="pinDescription">Description:</label><br>
+            <textarea id="pinDescription" name="pinDescription" required></textarea><br><br>
+            <button type="submit">Save Pin</button>
+        </form>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="script.js"></script>
 </body>
