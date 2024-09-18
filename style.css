@@ -13,3 +13,47 @@ html {
 #map { 
     height: 800px; 
 }
+
+.leaflet-popup-content {
+    text-align: center;
+}
+
+#pinModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the modal appears above other content */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999; /* Ensure it's below the modal but above other content */
+}
+
+/*
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 800vw;
+}
+
+html {
+    height: 100%;
+    width: 100vw;
+}
+
+#map { 
+    height: 800px; 
+}
+*/
