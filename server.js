@@ -18,3 +18,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
   .then(() => console.log('Connect to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB:', err));
+
+//Pin schema and model
+const pinSchema = new mongoose.Schema({
+    name: String,
+    description: String,
+    lat: Number,
+    lng: Number,
+});
