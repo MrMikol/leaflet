@@ -48,6 +48,20 @@ $('#pinForm').on('submit', function(event) {
 });
 
 function savePin(data) {
-    console.log('Pin saved:', data);
-    alert('Pin saved:', data);
+    fetch('http://localhost:5000/api/pins', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log('Pin saved: ', result);
+      })
+        .catch((error) => {
+            console.error('Error saving pin: ', error);
+        });
+    //console.log('Pin saved:', data);
+    //alert('Pin saved:', data);
 };
