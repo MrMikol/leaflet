@@ -26,3 +26,21 @@ const pinSchema = new mongoose.Schema({
     lat: Number,
     lng: Number,
 });
+
+const Pin = mongoose.model('Pin', pinSchema);
+
+//API endpoint to save a pin
+app.post('/api/pins', async (req, res) => {
+    try {
+        const { name, description, lat, lng } = req.body;
+        const newPin = new Pin({ name, description, lat, lng });
+        await newPin.save();
+        res.status(201).json({ message: 'Pin saved successfully', pin: newPin });
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to save pin', error });
+    }
+});
+
+app.listen(port, () => {
+    console.log('Server is running on port ${port}');
+});
