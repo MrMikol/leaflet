@@ -21,7 +21,7 @@ map.on('click', function (e) {
     $('#overlay').css("display", "block"); // Show overlay
     $('#pinModal').css("display", "block"); // Show modal
     pinData = {
-        lat: e.latlng.latl,
+        lat: e.latlng.lat,
         lng: e.latlng.lng
     };
 });
